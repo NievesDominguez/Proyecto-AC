@@ -1,0 +1,20 @@
+title: Globals
+---
+// Variables que escribe el juego (C#) antes de cada conversación.
+// Los valores de ejemplo solo fijan el tipo (texto).
+
+// Personalidad del aldeano con el que se habla
+<<declare $social = "Extrovertido">>
+<<declare $energy = "Tranquilo">>
+<<declare $outlook = "Optimista">>
+<<declare $decision = "Emocional">>
+<<declare $trust = "Confiado">>
+
+// Estado del mundo
+// $weather: sunny, cloudy, rain, storm, snow, fog, wind
+<<declare $weather = "sunny">>
+// $time_of_day: morning, afternoon, night
+<<declare $time_of_day = "morning">>
+// $event: none o el nombre del evento activo (por ejemplo, festival)
+<<declare $event = "none">>
+===

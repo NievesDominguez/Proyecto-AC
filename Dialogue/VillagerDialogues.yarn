@@ -1,0 +1,40 @@
+﻿
+title: Extrovert_Chat_01
+---
+¡Eh, qué bien que hayas venido! ¡Estaba deseando hablar con alguien!
+
+-> ¿Tienes algo planeado para hoy?
+    ¡Podríamos organizar algo con los demás vecinos! ¡Seguro que se apunta mucha gente!
+-> ¿Te gusta hablar con todo el mundo?
+    ¡Claro! Cada persona tiene alguna historia interesante que contar.
+===
+
+title: Introvert_Chat_01
+---
+Hola. Me alegro de verte. Estaba disfrutando un rato de tranquilidad.
+
+-> ¿Prefieres estar a solas?
+    A veces sí. No es que no me guste la gente, simplemente necesito descansar de vez en cuando.
+-> ¿Qué haces cuando estás a solas?
+    Suelo leer o dedicarme a mis cosas. Es agradable no tener prisa.
+===
+
+title: Optimist_Chat_01
+---
+¡Hoy parece un buen día para hacer algo diferente!
+
+-> ¿Y si las cosas salen mal?
+    ¡Pues ya encontraremos otra solución! Seguro que algo bueno sacamos de ello.
+-> ¿Siempre ves el lado positivo?
+    No siempre, pero prefiero pensar que las cosas pueden mejorar.
+===
+
+title: Pessimist_Chat_01
+---
+No sé yo si hoy va a ser un buen día. Hay demasiadas cosas que podrían salir mal.
+
+-> ¿Por qué piensas eso?
+    No quiero ser agorero, pero prefiero estar preparado por si acaso.
+-> Quizá todo salga bien.
+    Ojalá tengas razón. Me gustaría equivocarme esta vez.
+===

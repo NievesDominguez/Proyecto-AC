@@ -1,0 +1,211 @@
+// =====================================================================
+// REGLAS DE LOS NODE GROUPS
+// - Todos los nodos de un grupo comparten el mismo título.
+// - Cada nodo necesita al menos un when:
+// - Varias líneas when: se combinan (hay que cumplirlas todas).
+// - Yarn prefiere el nodo con más condiciones (el más específico).
+// - when: always sirve de respaldo para que el grupo nunca quede vacío.
+// =====================================================================
+
+
+// =====================================================================
+// GRUPO: Chat  (charla general, depende sobre todo de la personalidad)
+// =====================================================================
+
+title: Chat
+when: always
+---
+Vecino: Buenas. Por aquí todo tranquilo.
+===
+
+title: Chat
+when: $social == "Extrovertido"
+---
+Vecino: Hoy he hablado con medio vecindario y todavía me quedan ganas.
+===
+
+title: Chat
+when: $social == "Introvertido"
+---
+Vecino: Me gusta esta hora, cuando casi no hay nadie por la plaza.
+===
+
+title: Chat
+when: $outlook == "Pesimista"
+when: $trust == "Desconfiado"
+---
+Vecino: Dicen que todo va bien. Ya veremos.
+===
+
+title: Chat
+when: $outlook == "Optimista"
+when: $energy == "Energico"
+---
+Vecino: Tengo la sensación de que hoy me sale todo.
+===
+
+
+// =====================================================================
+// GRUPO: WeatherComment  (depende del tiempo y, opcionalmente, de rasgos)
+// =====================================================================
+
+title: WeatherComment
+when: always
+---
+Vecino: Pues sí, hoy el tiempo está así.
+===
+
+// ---- Lluvia ----
+
+title: WeatherComment
+when: $weather == "rain"
+---
+Vecino: Llueve fino. De esas lluvias que no avisan.
+===
+
+title: WeatherComment
+when: $weather == "rain"
+when: $social == "Extrovertido"
+---
+Vecino: Cuando llueve se oye todo mucho más. Conversaciones desde los portales, gente corriendo...
+===
+
+title: WeatherComment
+when: $weather == "rain"
+when: $social == "Introvertido"
+---
+Vecino: Me gusta el ruido de la lluvia en el tejado. Hace que el silencio no se note.
+===
+
+title: WeatherComment
+when: $weather == "rain"
+when: $outlook == "Pesimista"
+---
+Vecino: Ya está el camino hecho un barrizal. No falla.
+===
+
+// ---- Sol ----
+
+title: WeatherComment
+when: $weather == "sunny"
+when: $outlook == "Optimista"
+---
+Vecino: Me he levantado con el sol en la cara, y eso ya cambia el día entero.
+===
+
+title: WeatherComment
+when: $weather == "sunny"
+when: $outlook == "Pesimista"
+---
+Vecino: Con este calor se me seca el huerto antes de la tarde.
+===
+
+title: WeatherComment
+when: $weather == "sunny"
+when: $time_of_day == "night"
+when: $energy == "Tranquilo"
+---
+Vecino: Qué noche tan limpia.
+===
+
+// ---- Nieve ----
+
+title: WeatherComment
+when: $weather == "snow"
+when: $social == "Extrovertido"
+---
+Vecino: Por la calle solo se oyen risas. La nieve pone a todo el mundo de otro humor.
+===
+
+title: WeatherComment
+when: $weather == "snow"
+when: $social == "Introvertido"
+---
+Vecino: La nieve se lo traga todo. Hasta los pasos suenan distintos.
+===
+
+// ---- Tormenta ----
+
+title: WeatherComment
+when: $weather == "storm"
+when: $decision == "Logico"
+---
+Vecino: Entre el relámpago y el trueno van cuatro segundos. Se acerca.
+===
+
+// ---- Niebla ----
+
+title: WeatherComment
+when: $weather == "fog"
+when: $trust == "Desconfiado"
+---
+Vecino: Prefiero no moverme hasta saber qué hay delante. La niebla engaña.
+===
+
+
+// =====================================================================
+// GRUPO: TimeOfDay  (depende de la hora del día)
+// =====================================================================
+
+title: TimeOfDay
+when: always
+---
+Vecino: El día va pasando.
+===
+
+title: TimeOfDay
+when: $time_of_day == "morning"
+---
+Vecino: Qué temprano empieza a moverse todo por aquí.
+===
+
+title: TimeOfDay
+when: $time_of_day == "morning"
+when: $energy == "Energico"
+---
+Vecino: Con esta luz, a las seis ya no podía seguir en la cama.
+===
+
+title: TimeOfDay
+when: $time_of_day == "afternoon"
+---
+Vecino: Ya ha pasado lo más largo del día.
+===
+
+title: TimeOfDay
+when: $time_of_day == "night"
+---
+Vecino: Se hace tarde.
+===
+
+title: TimeOfDay
+when: $time_of_day == "night"
+when: $social == "Introvertido"
+---
+Vecino: Hay tanta calma que se oye hasta lo lejano.
+===
+
+
+// =====================================================================
+// GRUPO: Event  (depende del evento activo, $event)
+// Se activa desde C# con worldState.SetEvent("festival")
+// =====================================================================
+
+title: Event
+when: always
+---
+Vecino: Hay algo en el aire hoy.
+===
+
+title: Event
+when: $event == "festival"
+---
+Vecino: Se nota que se acerca el festival. Todo el mundo anda preparando algo.
+===
+
+title: Event
+when: $event == "festival"
+when: $social == "Extrovertido"
+---
+Vecino: ¡Con el festival encima, nadie habla de otra cosa!
+===
